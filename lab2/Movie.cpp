@@ -10,7 +10,6 @@ Movie::Movie() : year_(0), score_(1.0), length_(0) {
 bool Movie::set_name(const char* name) {
     if (!name) return false;
 
-    // enforce max 256 chars
     std::size_t n = std::strlen(name);
     if (n > 256) return false;
 
@@ -23,8 +22,8 @@ const char* Movie::get_name() const {
 }
 
 bool Movie::set_year(int year) {
-    // Basic sanity check
-    if (year < 1878) return false; // early film era; arbitrary but reasonable
+   
+    if (year < 1878) return false;
     year_ = year;
     return true;
 }
